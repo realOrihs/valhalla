@@ -1,0 +1,86 @@
+.about-main {
+    display: flex;
+    height: 600px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20%;
+}
+
+.about-main h1{
+    font-size:48px;
+}
+
+.about-tags-container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.about-tags-container img{
+    margin-right: 20px;
+}
+
+.tags-left{
+    display: inherit;
+    flex-direction: row;
+    gap: 5%;
+}
+
+.tags-right{
+    display: inherit;
+    flex-direction: row;
+    gap: 24%;
+}
+
+.about-tags span{
+    margin: 0 20px 10px;
+    border: none;
+}
+
+.about-main p{
+    font-size: 32px;
+}
+.about-showcase{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    flex-wrap: wrap;
+    justify-content: left;
+    padding: 0 20% 40px;
+}
+
+.about-showcase-card{
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: left;
+    flex-wrap: wrap;
+    padding: 20px 20px;
+}
+
+.itch-button{
+    padding: 5px 10px;
+    border: transparent 1px;
+    background: #C3C3C3;
+    border-radius: 5px;
+    max-height: 30px;
+    max-width: 200px;
+    margin-top: 40px;
+}
+
+.about-showcase-img{
+    max-width:491px;
+    max-height: 174px;
+    margin-right: 20px;
+}
+
+.nav-buttons{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-left: 50%;
+    gap: 60px;
+}

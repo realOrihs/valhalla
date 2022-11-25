@@ -1,0 +1,112 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body{
+    font-family: Inter;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    height: 600px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20%;
+}
+
+.main h1{
+    font-size:48px;
+}
+
+.main p{
+    font-size: 32px;
+}
+
+.showcase{
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    flex-wrap: wrap;
+    justify-content: left;
+    padding: 0 20% 40px;
+}
+
+.showcase-card{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: left;
+    flex-wrap: wrap;
+    padding: 20px 20px;
+}
+
+.center-top-left{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20% 40px;
+}
+
+
+.devs-img{
+    max-width:748px;
+    max-height: 432px;
+}
+
+.showcase-img{
+    max-width:491px;
+    max-height: 174px;
+}
+
+.content-left{
+    width:30%;
+}
+
+.arrow-button {
+    text-decoration: none;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid black;
+    background: none;
+}
+
+.arrow-button::after {
+    content: url("data:image/svg+xml, %3Csvg%20width=%277%27%20height=%2712.19%27%20xmlns=%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox=%270%200%207%2012.19%27%3E%3Cpath%20d=%27M.27,10.64a.89.89,0,0,0,0,1.28.91.91,0,0,0,1.28,0L6.73,6.73a.89.89,0,0,0,0-1.28L1.55.27A.89.89,0,0,0,.27.27a.89.89,0,0,0,0,1.28L4.81,6.1Z%27%2F%3E%3C%2Fsvg%3E ");
+    margin-left: 10px;
+    transition: 0.2s ease-out;
+}
+
+.arrow-button:hover::after{
+    margin-left: 20px;
+}
+
+
+.about-button-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid black 1px;
+    border-radius: 5px;
+    padding:0 5px;
+    max-height: 30px;
+    max-width: 100px;
+}
+
+.tags{
+    padding: 0 20px 10px;
+}
+
+.tags span{
+    padding:0 20px 0;
+    border: solid black 1px;
+    border-radius: 30px;
+    margin-right: 20px;
+    /*display:flex;*/
+    /*flex-direction: row;*/
+    /*align-items: center;*/
+    /*justify-content: space-around;*/
+}
