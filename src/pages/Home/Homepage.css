@@ -1,11 +1,24 @@
+@font-face {
+    font-family: "PragmaticaC";
+    src: url("/public/fonts/pragmatica-cyrillic/pragmatica-cyrillic.woff2") format("woff2"); /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "PragmaticaC", serif;
 }
 
-.body{
-    font-family: Inter;
+.flex-column{
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: column;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .main {
@@ -13,16 +26,33 @@
     flex-direction: row;
     height: 600px;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 20%;
+    justify-content: space-evenly;
+    padding: 0 24px;
 }
 
 .main h1{
-    font-size:48px;
+    font-family: 'PragmaticaC';
+    font-style: normal;
+    font-weight: 700;
+    font-size: clamp(2rem, 1.4375rem + 2.5vw, 3rem);
+    max-width: 705px;
+    max-height: 166px;
+    line-height: 130%;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    /* or 83px */
+
+    color: #291132;
 }
 
 .main p{
-    font-size: 32px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    font-size: clamp(1rem, 0.4375rem + 2.5vw, 2rem);
+    max-width: 619px;
+    max-height: 141px;
 }
 
 .showcase{
@@ -31,7 +61,7 @@
     align-items: start;
     flex-wrap: wrap;
     justify-content: left;
-    padding: 0 20% 40px;
+    padding: 0 20%;
 }
 
 .showcase-card{
@@ -43,45 +73,59 @@
     padding: 20px 20px;
 }
 
-.center-top-left{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.showcase-title {
     padding: 0 20% 40px;
 }
 
 
 .devs-img{
-    max-width:748px;
+    height:auto;
+    width: 100%;
     max-height: 432px;
+    max-width: 748px;
+    border: 13px solid #291132;
 }
 
 .showcase-img{
-    max-width:491px;
-    max-height: 174px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px 4px 0px 0px;
 }
 
 .content-left{
-    width:30%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px 24px;
+    gap: 32px;
+    max-width: 753px;
+    max-height: 371px;
+    font-size: 16px;
 }
 
 .arrow-button {
     text-decoration: none;
-    color: black;
+    color: #FFFFFF;
     padding: 5px 10px;
     border-radius: 5px;
     border: 1px solid black;
-    background: none;
+    background: #291132;
+    font-size: 24px;
 }
 
 .arrow-button::after {
-    content: url("data:image/svg+xml, %3Csvg%20width=%277%27%20height=%2712.19%27%20xmlns=%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox=%270%200%207%2012.19%27%3E%3Cpath%20d=%27M.27,10.64a.89.89,0,0,0,0,1.28.91.91,0,0,0,1.28,0L6.73,6.73a.89.89,0,0,0,0-1.28L1.55.27A.89.89,0,0,0,.27.27a.89.89,0,0,0,0,1.28L4.81,6.1Z%27%2F%3E%3C%2Fsvg%3E ");
+    content: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.91655 1.93332L11.5332 7.53332C11.5999 7.59998 11.647 7.67221 11.6746 7.74998C11.7026 7.82776 11.7166 7.91109 11.7166 7.99998C11.7166 8.08887 11.7026 8.17221 11.6746 8.24998C11.647 8.32776 11.5999 8.39998 11.5332 8.46665L5.91655 14.0833C5.761 14.2389 5.56655 14.3166 5.33322 14.3166C5.09989 14.3166 4.89989 14.2333 4.73322 14.0666C4.56655 13.9 4.48322 13.7055 4.48322 13.4833C4.48322 13.2611 4.56655 13.0666 4.73322 12.9L9.63322 7.99998L4.73322 3.09998C4.57767 2.94443 4.49989 2.75287 4.49989 2.52532C4.49989 2.29732 4.58322 2.09998 4.74989 1.93332C4.91655 1.76665 5.111 1.68332 5.33322 1.68332C5.55544 1.68332 5.74989 1.76665 5.91655 1.93332Z' fill='white'/%3E%3C/svg%3E");
     margin-left: 10px;
     transition: 0.2s ease-out;
 }
 
 .arrow-button:hover::after{
     margin-left: 20px;
+}
+
+.arrow-button:hover{
+    background:#B44148;
+    color:white;
 }
 
 
@@ -97,13 +141,13 @@
 }
 
 .tags{
-    padding: 0 20px 10px;
+    padding-bottom: 20px;
 }
 
 .tags span{
-    padding:0 20px 0;
-    border: solid black 1px;
-    border-radius: 30px;
+    padding: 5px 10px;
+    border: solid black 3px;
+    border-radius: 50px;
     margin-right: 20px;
     /*display:flex;*/
     /*flex-direction: row;*/

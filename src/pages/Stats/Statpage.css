@@ -1,17 +1,30 @@
 .searchbar{
-    padding-left: 5px;
-    padding-bottom: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 16px 32px;
+    min-height: 1em;
+    min-width: 70%;
+    gap: 10px;
     border: solid black 1px;
     border-radius: 5px;
-    max-height: 30px;
-    width: 40%;
     margin-bottom: 20px;
+    background-image: url("/public/images/material-symbols_search.svg");
+    background-position: right 2% center;
+    background-repeat: no-repeat;
+}
+
+
+.img {
+    max-height: 30px;
+    max-width: 30px;
 }
 
 .stat-main {
     display: flex;
     flex-direction: column;
-    height: 600px;
+    min-height: 600px;
     align-items: center;
     justify-content: space-evenly;
     padding: 40px 20% 0;
@@ -25,6 +38,212 @@
     background: #DFDFDF;
     height: 400px;
     width: 1250px;
+}
+
+.grid-wrapper{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 30px;
+    row-gap: 30px;
+    grid-auto-rows: minmax(30px, auto);
+    height: 30vh;
+    background: #DFDFDF;
+    border-radius: 12px;
+}
+
+.grid-firstcolumn{
+    grid-column: 1;
+    grid-row: 2 / 4;
+    display: grid;
+    grid-template-columns: 10% 30% 60%;
+    grid-auto-rows: 40px;
+    grid-template-rows: repeat(3, 1fr);
+    padding-left: 32px;
+}
+
+.progress-title{
+    /*grid-column: 1 / 2;*/
+    /*grid-row: 1;*/
+    padding-left: 32px;
+    padding-top: 34px;
+    font-size: 24px;
+}
+
+.progress-visual{
+    padding-top: 24px;
+    font-size: 24px;
+}
+
+.progress-visual::after{
+    content: '';
+    display: block;
+    height: 8px;
+    width: 90%;
+    background: #747474;
+    color: #747474;
+    border-radius: 100px;
+}
+
+.game-time-img{
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.game-time-number{
+    grid-column: 2;
+    grid-row: 1;
+    min-width: 110px;
+}
+
+/*.game-time-number::before{*/
+/*    content: url("../public/images/ic_baseline-access-time.svg");*/
+/*    display: block;*/
+/*    min-width: 30px;*/
+/*    min-height: 30px;*/
+/*}*/
+
+.game-time-title{
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.sessions-count-img{
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.sessions-count-number{
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.sessions-count-title{
+    grid-column: 3;
+    grid-row: 2;
+}
+
+
+.flight-time-img{
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.flight-time-number{
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.flight-time-title{
+    grid-column: 3;
+    grid-row: 3;
+}
+
+.grid-secondcolumn{
+    grid-column: 2;
+    grid-row: 2 / 5;
+    display: grid;
+    grid-template-columns: 10% 30% 60%;
+    grid-auto-rows: 40px;
+    grid-template-rows: repeat(4, 1fr);
+    /*padding-left: 32px;*/
+}
+
+.coins-count-img{
+    grid-column: 1;
+    grid-row: 1;
+    /*border: solid 1px black;*/
+}
+
+.coins-count-number{
+    grid-column: 2;
+    grid-row: 1;
+    /*border: solid 1px black;*/
+}
+
+.coins-count-title{
+    grid-column: 3;
+    grid-row: 1;
+    /*border: solid 1px black;*/
+}
+
+.hammers-count-img{
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.hammers-count-number{
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.hammers-count-title{
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.skins-count-img{
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.skins-count-number{
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.skins-count-title{
+    grid-column: 3;
+    grid-row: 3;
+}
+
+.artifacts-count-img{
+    grid-column: 1;
+    grid-row: 4;
+}
+
+.artifacts-count-number{
+    grid-column: 2;
+    grid-row: 4;
+}
+
+.artifacts-count-title{
+    grid-column: 3;
+    grid-row: 4;
+}
+
+.grid-thirdcolumn{
+    grid-column: 3;
+    grid-row: 2 / 4;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-auto-rows: 40px;
+    grid-template-rows: repeat(3, 1fr);
+    /*padding-left: 32px;*/
+}
+
+.bestscores-title{
+    grid-column: 2;
+    grid-row: 1;
+    padding-left: 45px;
+    font-size: 20px;
+}
+
+.bestscores-img{
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.bestscores-numbers{
+    grid-column: 2;
+    grid-row:2;
+    font-size: 16px;
+}
+
+.bestscores-worlds{
+    grid-column: 2;
+    grid-row:2;
+    font-size: 16px;
+    padding-left: 55px;
 }
 
 .players-rating{

@@ -1,0 +1,14 @@
+.auth-form-container{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    gap: 72px;
+
+    background: #FFFFFF;
+    border-radius: 30px;
+}

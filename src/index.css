@@ -1,1 +1,10 @@
+@font-face {
+    font-family: "PragmaticaC";
+    src: url("../public/fonts/pragmatica-cyrillic/pragmatica-cyrillic.woff2") format("woff2"); /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+}
 
+.body{
+    font-family: "PragmaticaC", serif;
+}

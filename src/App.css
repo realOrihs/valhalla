@@ -1,41 +1,158 @@
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+  .App-link {
+    display: none;
+  }
+
+  .App-user{
+    color: #DFDFDF;
+  }
+
+  .App-header-menu ul{
+    position: absolute;
+    top: 60px;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    height: calc(100vh - 77px);
+    background-color: white;
+    border-top: 1px solid black;
+    display: none;
+  }
+
+  .App-header-menu-expanded ul {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    height: calc(100vh - 77px);
+    background-color: white;
+    border-top: 1px solid black;
+    display: block;
+  }
+
+  .App-header-menu li{
+    text-align: center;
+    margin: 0;
+  }
+
+  .App-header-menu li:hover{
+    background-color: #eee;
+  }
+
+  .App-header-menu li a{
+    width: 100%;
+    padding: 1.5rem 0;
+  }
+}
+
 .App {
   text-align: center;
 }
 
 .App-header {
-  background-color: #DCDCDC;
+  background-color: #291132;
   height: 100px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 5%;
+}
+
+.App-header-menu{
+  margin-left: auto;
+}
+
+.App-header-menu ul{
+  display: flex;
+  padding: 0;
+}
+
+.App-header-menu li{
+  list-style-type: none;
+  margin: 0 1rem;
+}
+
+.App-header-menu li a{
+  text-decoration: none;
+  display: block;
+  width: 100%;
+}
+
+.hamburger {
+  content: url("/public/images/charm_menu-hamburger.svg");
+  position: relative;
+  left: 40%;
+  top: 20%;
+  border: 0;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: #283b8b;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  transform: translateY(-50%);
+  display: none;
+}
+
+.hamburger:hover {
+  background-color: #2642af;
+}
+
+.App-logo{
+  position: absolute;
+  left: 10%;
 }
 
 .App-link {
   text-decoration: none;
-  color: black;
+  color: #F3F3F0;
+  position: relative;
+}
+
+.App-link#login{
+  position: absolute;
+  right: 10%;
 }
 
 .App-link::after {
   content: '';
-  display: block;
+  display: none;
   height: 8px;
-  width: 0;
-  background: black;
+  width: 8px;
+  border-radius: 100%;
+  background: #F3F3F0;
   transition:all .5s;
+  position: absolute;
+  margin-top: -2px;
+  right: -16px;
+  top: 50%;
+}
+
+.App-link:hover{
+  color: white;
 }
 
 .App-link:hover::after{
-  width:100%;
+  display: block;
 }
 
 .App-footer{
-  background-color: #DCDCDC;
+  background-color: #291132;
   height: 100px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 5%;
+}
+
+.App-span{
+  color: #F3F3F0;
 }
 
 .Auth-form-container {

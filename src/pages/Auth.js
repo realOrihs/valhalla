@@ -1,99 +1,99 @@
 import React, { useState } from "react"
+import "./Auth.css"
+import data from "bootstrap/js/src/dom/data";
 
 export default function (props) {
-    let [authMode, setAuthMode] = useState("signin")
+    // let [authMode, setAuthMode] = useState("signin")
+    const [loginValue, setLoginValue] = useState("")
+    const [passwordValue, setPasswordValue] = useState("")
 
-    const changeAuthMode = () => {
-        setAuthMode(authMode === "signin" ? "signup" : "signin")
+    // const changeAuthMode = () => {
+    //     setAuthMode(authMode === "signin" ? "signup" : "signin")
+    // }
+
+
+    const login = (e) => {
+        const fetchData = async() => {
+            const token = localStorage.getItem('token')
+            const url = `https://d068-188-18-32-121.eu.ngrok.io/api/admin/getUsername?token=${token}`; //запрос на синхронизацию
+            props.setLoading(true);
+            props.setError(null);
+
+            try {
+                const response = await fetch(url)
+                const data = await response.json()
+                props.setUsernameDTO({isAuth: data.username !== null, data: data})
+                console.log(data)
+            }
+            catch (err){
+                console.error(err);
+                props.setError(err);
+            } finally {
+                props.setLoading(false);
+            }
+        }
+        const getToken = async() => {
+            const url = `https://d068-188-18-32-121.eu.ngrok.io/api/admin/getToken?username=${loginValue}&password=${passwordValue}`;
+
+            try {
+                const response = await fetch(url)
+                const data = await response.json()
+                // setUsertokenDTO({isAuth: data.token !== null, data: data} )
+                localStorage.setItem("token", data.token)//fetch запрос токена с сервера /api/admin/getToken?username=chezzyz&password=49704970
+                fetchData();
+                console.log(data)
+
+            }
+            catch (err){
+                console.error(err);
+            }
+        }
+        getToken()
+        //fetch запрос юзер даты по токену полученному выше
+        //    данные с запроса
     }
-
-    if (authMode === "signin") {
+    // if (authMode === "signin") {
         return (
-            <div className="Auth-form-container">
-                <form className="Auth-form">
+            <div className="auth-form-container">
+                <form className="Auth-form" action={"https://d068-188-18-32-121.eu.ngrok.io/api/admin/"} method={"GET"}>
                     <div className="Auth-form-content">
-                        <h3 className="Auth-form-title">Sign In</h3>
-                        <div className="text-center">
-                            Not registered yet?{" "}
-                            <span className="link-primary" onClick={changeAuthMode}>
-                Sign Up
-              </span>
-                        </div>
+                        <h3 className="Auth-form-title">Авторизуйтесь, чтобы писать статьи в блог</h3>
                         <div className="form-group mt-3">
-                            <label>Email address</label>
+                            <label>Логин</label>
                             <input
-                                type="email"
+                                value={loginValue}
+                                type="text"
                                 className="form-control mt-1"
-                                placeholder="Enter email"
+                                placeholder="Логин"
+                                id="getToken?username"
+                                onChange={(e) => setLoginValue(e.target.value)}
                             />
                         </div>
                         <div className="form-group mt-3">
-                            <label>Password</label>
+                            <label>Пароль</label>
                             <input
+                                value={passwordValue}
                                 type="password"
                                 className="form-control mt-1"
-                                placeholder="Enter password"
+                                placeholder="Пароль"
+                                id="&password"
+                                onChange={(e) => setPasswordValue(e.target.value)}
                             />
                         </div>
                         <div className="d-grid gap-2 mt-3">
-                            <button type="submit" className="btn btn-primary">
-                                Submit
-                            </button>
+                            <div className="btn btn-primary" onClick={login}>
+                                Войти
+                            </div>
                         </div>
-                        <p className="text-center mt-2">
-                            Forgot <a href="#">password?</a>
-                        </p>
                     </div>
                 </form>
             </div>
         )
-    }
+    // }
 
     return (
-        <div className="Auth-form-container">
-            <form className="Auth-form">
-                <div className="Auth-form-content">
-                    <h3 className="Auth-form-title">Sign In</h3>
-                    <div className="text-center">
-                        Already registered?{" "}
-                        <span className="link-primary" onClick={changeAuthMode}>
-              Sign In
-            </span>
-                    </div>
-                    <div className="form-group mt-3">
-                        <label>Full Name</label>
-                        <input
-                            type="email"
-                            className="form-control mt-1"
-                            placeholder="e.g Jane Doe"
-                        />
-                    </div>
-                    <div className="form-group mt-3">
-                        <label>Email address</label>
-                        <input
-                            type="email"
-                            className="form-control mt-1"
-                            placeholder="Email Address"
-                        />
-                    </div>
-                    <div className="form-group mt-3">
-                        <label>Password</label>
-                        <input
-                            type="password"
-                            className="form-control mt-1"
-                            placeholder="Password"
-                        />
-                    </div>
-                    <div className="d-grid gap-2 mt-3">
-                        <button type="submit" className="btn btn-primary">
-                            Submit
-                        </button>
-                    </div>
-                    <p className="text-center mt-2">
-                        Forgot <a href="#">password?</a>
-                    </p>
-                </div>
-            </form>
-        </div>
+        <button type="submit" className="btn btn-primary">
+            Повторите попытку
+        </button>
     )
 }
