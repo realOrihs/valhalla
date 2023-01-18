@@ -15,7 +15,7 @@ export default function (props) {
     const login = (e) => {
         const fetchData = async() => {
             const token = localStorage.getItem('token')
-            const url = `https://d068-188-18-32-121.eu.ngrok.io/api/admin/getUsername?token=${token}`; //запрос на синхронизацию
+            const url = `https://d068-188-18-32-121.eu.ngrok.io/api/admin/getUsername?token=${token}`; //запрос на синхронизацию + ссылка на сервер
             props.setLoading(true);
             props.setError(null);
 
@@ -33,7 +33,7 @@ export default function (props) {
             }
         }
         const getToken = async() => {
-            const url = `https://d068-188-18-32-121.eu.ngrok.io/api/admin/getToken?username=${loginValue}&password=${passwordValue}`;
+            const url = `https://d068-188-18-32-121.eu.ngrok.io/api/admin/getToken?username=${loginValue}&password=${passwordValue}`; //ссылка на сервер
 
             try {
                 const response = await fetch(url)
@@ -56,6 +56,7 @@ export default function (props) {
         return (
             <div className="auth-form-container">
                 <form className="Auth-form" action={"https://d068-188-18-32-121.eu.ngrok.io/api/admin/"} method={"GET"}>
+                                                   {/*//ссылка на сервер*/}
                     <div className="Auth-form-content">
                         <h3 className="Auth-form-title">Авторизуйтесь, чтобы писать статьи в блог</h3>
                         <div className="form-group mt-3">

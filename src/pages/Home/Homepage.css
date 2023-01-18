@@ -1,6 +1,6 @@
 @font-face {
     font-family: "PragmaticaC";
-    src: url("/public/fonts/pragmatica-cyrillic/pragmatica-cyrillic.woff2") format("woff2"); /* Modern Browsers */
+    src: url("/public/fonts/ofont.ru_Pragmatica.ttf") format("ttf"); /* Modern Browsers */
     font-weight: normal;
     font-style: normal;
 }
@@ -12,6 +12,84 @@
     font-family: "PragmaticaC", serif;
 }
 
+.page-background{
+    background-color: #F3F3F0;
+    position: sticky;
+    z-index: 2;
+}
+
+/*.background-yellow-top{*/
+/*    position: absolute;*/
+/*    width: 89.37px;*/
+/*    height: 1532.3px;*/
+/*    left: 100px;*/
+/*    top: -686px;*/
+/*    z-index: -1;*/
+/*    background: #FFDC62;*/
+/*    transform: matrix(0.71, 0.71, -0.7, 0.71, 0, 0);*/
+/*    opacity: 0.7;*/
+/*}*/
+
+/*.background-orange-top{*/
+/*    position: absolute;*/
+/*    width: 192.92px;*/
+/*    height: 1532.3px;*/
+/*    top: -357.68px;*/
+/*    left: -20px;*/
+/*    z-index: -1;*/
+/*    background: #E97839;*/
+/*    transform: matrix(0.71, 0.71, -0.7, 0.71, 0, 0);*/
+/*    opacity: 0.7;*/
+/*}*/
+
+/*.background-red-top{*/
+/*    position: absolute;*/
+/*    width: 89.37px;*/
+/*    height: 1947.87px;*/
+/*    left: 100px;*/
+/*    top: -381.32px;*/
+/*    z-index: -1;*/
+/*    background: #C52D36;*/
+/*    transform: matrix(0.71, 0.71, -0.7, 0.71, 0, 0);*/
+/*    opacity: 0.7;*/
+/*}*/
+
+/*.background-yellow-bot{*/
+/*    position: absolute;*/
+/*    width: 136.55px;*/
+/*    height: 2341.26px;*/
+/*    left: 2256.52px;*/
+/*    top: -500px;*/
+/*    z-index: -1;*/
+/*    background: #FFDC62;*/
+/*    transform: matrix(0.71, 0.71, -0.7, 0.71, 0, 0);*/
+/*    opacity: 0.7;*/
+/*}*/
+
+/*.background-orange-bot{*/
+/*    position: absolute;*/
+/*    width: 294.78px;*/
+/*    height: 2341.26px;*/
+/*    left: 2023.52px;*/
+/*    top: 1110px;*/
+/*    z-index: -1;*/
+/*    background: #E97839;*/
+/*    transform: matrix(0.71, 0.71, -0.7, 0.71, 0, 0);*/
+/*    opacity: 0.7;*/
+/*}*/
+
+/*.background-red-bot{*/
+/*    position: absolute;*/
+/*    width: 136.55px;*/
+/*    height: 2341.26px;*/
+/*    left: 2573.52px;*/
+/*    top: 1074px;*/
+/*    z-index: -1;*/
+/*    background: #C52D36;*/
+/*    transform: matrix(0.71, 0.71, -0.7, 0.71, 0, 0);*/
+/*    opacity: 0.7;*/
+/*}*/
+
 .flex-column{
     display: flex;
     flex-wrap: wrap;
@@ -19,6 +97,20 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.zalupa{
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    z-index: -1;
+}
+
+.zalupa-top{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
 }
 
 .main {
@@ -34,7 +126,8 @@
     font-family: 'PragmaticaC';
     font-style: normal;
     font-weight: 700;
-    font-size: clamp(2rem, 1.4375rem + 2.5vw, 3rem);
+    /*font-size: clamp(2rem, 1.4375rem + 2.5vw, 3rem);*/
+    font-size: 64px;
     max-width: 705px;
     max-height: 166px;
     line-height: 130%;
@@ -52,16 +145,26 @@
     flex-grow: 0;
     font-size: clamp(1rem, 0.4375rem + 2.5vw, 2rem);
     max-width: 619px;
+    line-height: 110%;
     max-height: 141px;
+    font-weight: 1;
+    color: #291132;
 }
 
 .showcase{
     display: flex;
     flex-direction: row;
-    align-items: start;
     flex-wrap: wrap;
-    justify-content: left;
-    padding: 0 20%;
+    justify-content: center;
+    padding: 0 5%;
+    margin-bottom: 50px;
+}
+
+.showcase-insides{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 1770px;
 }
 
 .showcase-card{
@@ -73,8 +176,22 @@
     padding: 20px 20px;
 }
 
+.showcase-card-insides{
+    background-color: white;
+    padding: 20px 20px;
+    width: 491px;
+}
+
+.showcase-card-inside-title{
+    font-weight: 700;
+    color: #291132;
+}
+
 .showcase-title {
-    padding: 0 20% 40px;
+    padding: 0 6% 10px;
+    margin-top: 30px;
+    font-weight: 700;
+    color: #291132;
 }
 
 
@@ -87,7 +204,7 @@
 }
 
 .showcase-img{
-    max-width: 100%;
+    max-width: 491px;
     height: auto;
     border-radius: 4px 4px 0px 0px;
 }
@@ -98,9 +215,10 @@
     align-items: flex-start;
     padding: 16px 24px;
     gap: 32px;
-    max-width: 753px;
+    width: 822px;
     max-height: 371px;
     font-size: 16px;
+    background: white;
 }
 
 .arrow-button {
@@ -142,13 +260,16 @@
 
 .tags{
     padding-bottom: 20px;
+    padding-top: 5px;
 }
 
 .tags span{
     padding: 5px 10px;
-    border: solid black 3px;
+    border: solid 2px;
+    border-color: #291132;
     border-radius: 50px;
     margin-right: 20px;
+    color: #291132;
     /*display:flex;*/
     /*flex-direction: row;*/
     /*align-items: center;*/

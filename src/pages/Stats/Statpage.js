@@ -6,7 +6,7 @@ const Statpage = () => {
     const [globalStats, setGlobalStats] = useState([''])
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
-    const [userId, setUserId] = useState("");
+    const [userId, setUserId] = useState(""); // хук для управления состоянием переменной юзер айди в форме
 
 
     // useEffect(() => {
@@ -23,7 +23,7 @@ const Statpage = () => {
 
     useEffect(() => {
         const fetchData = async() => {
-            const url = `https://d068-188-18-32-121.eu.ngrok.io/api/players/getPlayerById?id=${userId}`;
+            const url = `https://d068-188-18-32-121.eu.ngrok.io/api/players/getPlayerById?id=${userId}`; //ссылка на сервер
             setLoading(true);
             setError(null);
 
@@ -47,7 +47,7 @@ const Statpage = () => {
 
     useEffect(() => {
         const fetchData = async() => {
-            const url = `https://d068-188-18-32-121.eu.ngrok.io/api/players/getBestScores?levelName=Midgard&count=4`;
+            const url = `https://d068-188-18-32-121.eu.ngrok.io/api/players/getBestScores?levelName=Midgard&count=4`; //ссылка на сервер
             setLoading(true);
             setError(null);
 
@@ -119,10 +119,10 @@ const Statpage = () => {
     return (
         <div>
             <div className={'stat-main'}>
-                <input className={'searchbar'} type="text" defaultValue="уникальный идентификатор игрока" onChange={handleInput}></input>
+                <input className={'searchbar'} type="text" placeholder="Уникальный идентификатор игрока" onChange={handleInput}></input>
                 <div className={"grid-wrapper"}>
                     <div className={'progress-title'}>Ваш прогресс в To Valhalla</div>
-                    <div className={'progress-visual'}>Игра пройдена на {userStats.completeGamePercent}%</div>
+                    {/*<div className={'progress-visual'}>Игра пройдена на {userStats.completeGamePercent}%</div>*/}
                     <div className={'grid-firstcolumn'}>
                         <img className={'game-time-img'} src="images/ic_baseline-access-time.svg" alt=""/>
                         <div className={'game-time-number'}>{userStats.gameTime}</div>
