@@ -12,6 +12,10 @@
     font-family: "PragmaticaC", serif;
 }
 
+.App-user{
+    color: #DFDFDF;
+}
+
 .page-background{
     background-color: #F3F3F0;
     position: sticky;

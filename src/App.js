@@ -5,7 +5,7 @@ import { Routes, Route, Link} from "react-router-dom";
 import { Homepage } from './pages/Home/Homepage'
 import { About } from './pages/About/Aboutpage'
 import { Statpage } from './pages/Stats/Statpage'
-import { Blogpage } from './pages/Blogpage'
+import { Blogpage } from './pages/Blog/Blogpage'
 import Auth  from "./pages/Auth";
 import ToggleImages from "./functions/ToggleImages";
 import {useEffect, useState} from "react";

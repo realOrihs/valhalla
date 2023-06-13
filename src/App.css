@@ -6,10 +6,6 @@
     display: none;
   }
 
-  .App-user{
-    color: #DFDFDF;
-  }
-
   .App-header-menu ul{
     position: absolute;
     top: 60px;

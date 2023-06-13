@@ -10,6 +10,7 @@
     justify-content: space-between;
     padding: 0 20%;
     padding-top: 50px;
+    background-color: #F3F3F0;
 }
 
 .about-main h1{
@@ -46,6 +47,7 @@
     justify-content: left;
     padding: 0 20% 50px;
     padding-top: 50px;
+    background-color: #F3F3F0;
 }
 
 .about-showcase-card{
@@ -97,3 +99,8 @@
 .content-right{
     margin-top:60px;
 }
+
+.content-left{
+    background-color: #F3F3F0;
+}
+
